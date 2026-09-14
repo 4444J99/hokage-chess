@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- CONVERGENCE Sprint: Full PRODUCTION promotion — CI/CD, prototype skeleton, ADRs, badge row
+- CONVERGENCE Sprint: TypeScript prototype skeleton, CI workflow, ADRs, and badge row
 - Provenance materials deployed from local source archive
 
 ## [0.1.0] - 2026-02-13
@@ -20,5 +20,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Core project structure and documentation
 - README with portfolio-quality documentation
 
-[Unreleased]: https://github.com/organvm-iii-ergon/hokage-chess/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/organvm-iii-ergon/hokage-chess/releases/tag/v0.1.0
+[Unreleased]: https://github.com/4444J99/hokage-chess/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/4444J99/hokage-chess/releases/tag/v0.1.0

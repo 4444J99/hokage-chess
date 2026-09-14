@@ -1,0 +1,18 @@
+{
+  "receipt_type": "git-commit-object-snapshot",
+  "repository": "4444J99/hokage-chess",
+  "observed_at": "2026-08-31T22:20:00Z",
+  "method": "git cat-file commit ed8b20bca0934193c3e39f73712f6a1a05ade0d7 | sha256sum",
+  "commit": "ed8b20bca0934193c3e39f73712f6a1a05ade0d7",
+  "raw_commit_sha256": "e9a653ed96d23239e50e2fec5381bd12621f7f5345d5f4ed6839c10d972fc4b6",
+  "author": "4444jPPP <etceter4@etceter4.com>",
+  "recorded_summary": "feat: implement content strategy modules with tests",
+  "recorded_modules": [
+    "analytics",
+    "content strategy",
+    "growth",
+    "narrative"
+  ],
+  "recorded_co_author": "Claude Opus 4.6 <noreply@anthropic.com>",
+  "boundary": "This receipt preserves selected commit metadata and binds it to the raw local commit object; it does not treat commit attribution as legal ownership adjudication."
+}

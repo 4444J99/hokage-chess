@@ -1,6 +1,6 @@
 /**
- * Analytics dashboard for HokageChess.
- * Tracks CTR, retention, subscriber growth, and weekly scorecards.
+ * Analytics calculation helpers for HokageChess.
+ * Classifies caller-supplied CTR, retention, subscriber, and weekly values.
  */
 
 export interface VideoMetrics {

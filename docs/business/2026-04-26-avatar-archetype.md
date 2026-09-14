@@ -8,6 +8,17 @@
 
 ---
 
+> **Repository-status note (2026-08-31):** This file is preserved as a
+> strategy artifact. Several sources and the referenced
+> `src/lib/landing-engine/personas.ts` are not present on the current `main`
+> branch. “Canonical v1” describes the document's role inside the earlier
+> strategy corpus; it is not evidence of a deployed product, implemented
+> landing engine, active content operation, customer adoption, or outcomes.
+> Current implementation boundaries are recorded in
+> [`docs/evidence/README.md`](../evidence/README.md).
+
+---
+
 ## 0. Canon line
 
 Rob is the near-peer Hokage: a working adult climber documenting chess rating and fitness training in public, turning disciplined struggle into a village other people can join.

@@ -8,6 +8,12 @@ Accepted
 
 2026-02-13
 
+> **Current-state note (2026-08-31):** This ADR records the historical
+> TypeScript decision. The present dependency/configuration set does not pass a
+> fresh install, test, build, or lint audit, and the CI workflow does not fail
+> closed on every such error. See
+> [`docs/evidence/audit-2026-08-31.md`](../evidence/audit-2026-08-31.md).
+
 ## Context
 
 `hokage-chess` is a TypeScript-based project within ORGAN-III (Ergon) of the organvm eight-organ creative-institutional system. The project needed a technology foundation that balances rapid prototyping with long-term maintainability.
@@ -25,7 +31,7 @@ We chose TypeScript as the primary implementation language. Key architectural ch
 ### Positive
 
 - Consistent with organvm system-wide conventions
-- CI pipeline catches regressions early with continue-on-error for non-critical checks
+- CI was intended to surface regressions while allowing selected non-critical checks to continue
 - Documentation-first approach ensures discoverability and portfolio value
 
 ### Negative

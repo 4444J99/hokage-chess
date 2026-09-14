@@ -1,8 +1,7 @@
 schema_version: '1.0'
 repo: hokage-chess
 organ: III
-display_name: "Chess content creation engine \u2014 strategic growth blueprint, narrative-driven\
-  \ YouTube channel, and audience development system"
+display_name: "Design-stage TypeScript library and strategy corpus for chess-content planning"
 delivery:
 - platform: web_app
   status: not_started

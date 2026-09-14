@@ -1,5 +1,5 @@
 /**
- * hokage-chess — Data-driven chess content strategy platform
+ * hokage-chess — Design-stage chess content strategy library
  * Part of the organvm eight-organ system (ORGAN-III: Commerce).
  */
 

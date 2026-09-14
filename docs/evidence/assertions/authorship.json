@@ -1,0 +1,18 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "hokage_authorship_implementation_commit",
+  "assertion_class": "historical_record",
+  "statement": "The core TypeScript implementation commit is attributed to repository-owner identity 4444jPPP and explicitly records Claude Opus 4.6 as co-author.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "hokage_commit_ed8b20b",
+      "independence_group": "git-object-database",
+      "evidence_type": "immutable_source_event",
+      "reference": "docs/evidence/git-commit-snapshot-ed8b20b.json",
+      "body_hash": "sha256:24b7b97e8496b01ba5400909029a9c9cfbb85ffa6d38d3bbdda88305c4203936",
+      "observed_at": "2026-08-31T22:20:00Z"
+    }
+  ]
+}

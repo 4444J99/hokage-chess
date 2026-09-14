@@ -1,0 +1,39 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "hokage_project_status_20260831",
+  "assertion_class": "current_state",
+  "statement": "Hokage Chess is a PROTOTYPE with substantive TypeScript helper modules but no evidenced runnable end-user product deployment; the repository delivery manifest marks the web application not started.",
+  "verification_state": "verified",
+  "freshness": {
+    "verified_at": "2026-08-31T22:30:00Z",
+    "max_age_seconds": 2592000,
+    "status": "fresh"
+  },
+  "evidence_references": [
+    {
+      "evidence_id": "hokage_seed_status_manifest",
+      "independence_group": "reader-mode-status-record-2026-08-31",
+      "evidence_type": "owner_record",
+      "reference": "seed.yaml",
+      "body_hash": "sha256:f728196a488fb0cd5656e23918bbaad38f49d9e88dd45fa507d1afd2fba4695d",
+      "observed_at": "2026-08-31T22:45:00Z"
+    },
+    {
+      "evidence_id": "hokage_ecosystem_delivery_manifest",
+      "independence_group": "reader-mode-status-record-2026-08-31",
+      "evidence_type": "primary_source",
+      "reference": "ecosystem.yaml",
+      "body_hash": "sha256:044c217f97001d5f2fd3f721175688ca150b7f464e0e40cb688696b2285ee5ee",
+      "observed_at": "2026-08-31T22:20:00Z"
+    },
+    {
+      "evidence_id": "hokage_current_tree_audit_status",
+      "independence_group": "local-audit-2026-08-31",
+      "evidence_type": "fresh_verifier_receipt",
+      "reference": "docs/evidence/audit-2026-08-31.md",
+      "body_hash": "sha256:f8bc624943c0e75d2416722e3ec3a7434f5f821382cc3c07b4b5698174443239",
+      "observed_at": "2026-08-31T22:30:00Z"
+    }
+  ]
+}

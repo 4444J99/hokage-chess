@@ -1,0 +1,26 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "hokage_runtime_boundary_20260831",
+  "assertion_class": "historical_record",
+  "statement": "Audited main commit 6e81fd42e79d94fa3537648aa47fb3e7f0e7c3e4 contains no CLI binary, API client, backend, dashboard, persistence layer, authentication implementation, scheduler, or runtime dependency set.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "hokage_current_tree_audit_runtime",
+      "independence_group": "local-audit-2026-08-31",
+      "evidence_type": "fresh_verifier_receipt",
+      "reference": "docs/evidence/audit-2026-08-31.md",
+      "body_hash": "sha256:f8bc624943c0e75d2416722e3ec3a7434f5f821382cc3c07b4b5698174443239",
+      "observed_at": "2026-08-31T22:30:00Z"
+    },
+    {
+      "evidence_id": "hokage_package_manifest_runtime",
+      "independence_group": "upstream-source-tree-6e81fd4",
+      "evidence_type": "primary_source",
+      "reference": "package.json",
+      "body_hash": "sha256:59967932be0815a40e3445cd6a094580421f87af38e5130e843288128e9d257e",
+      "observed_at": "2026-08-31T22:20:00Z"
+    }
+  ]
+}

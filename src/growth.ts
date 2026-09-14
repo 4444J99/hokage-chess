@@ -1,6 +1,6 @@
 /**
- * Growth tracking and monetization pipeline for HokageChess.
- * Four-phase growth model with targets and revenue projections.
+ * Growth-target and monetization arithmetic helpers for HokageChess.
+ * Four-phase model with configured targets and simple revenue calculations.
  */
 
 export type GrowthPhase = "q1_setup" | "q2_rivals" | "q3_redemption" | "q4_authority";
