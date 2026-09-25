@@ -4,16 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Is
 
-**HokageChess** — data-driven chess content creation and audience development platform. TypeScript library that models content strategy, analytics, growth mechanics, and narrative structures for chess YouTube/social media creators. Uses Ki-Sho-Ten-Ketsu storytelling structure + Chess.com API data. **DESIGN_ONLY** — library stubs and type definitions, no runtime backend.
+**HokageChess** — prototype TypeScript library and strategy corpus that models content choices, caller-supplied analytics, growth arithmetic, and narrative structures for chess YouTube/social creators. It uses Ki-Sho-Ten-Ketsu storytelling structures but has no Chess.com or YouTube API client. **PROTOTYPE** — substantive source helpers and type definitions, but no runtime backend or end-user application.
 
 ## Commands
 
+The declared commands are shown below, but the current dependency/configuration
+set does not pass them. Read `docs/audiences/technical.md` and
+`docs/evidence/audit-2026-08-31.md` before attempting a repair.
+
 ```bash
-npm install
-npm run build        # tsc → dist/
-npm test             # jest --coverage
-npm run lint         # eslint src/ --ext .ts
-npm run dev          # tsc --watch
+npm ci
+npm run build
+npm test
+npm run lint
+npm run dev
 ```
 
 ## Architecture
@@ -27,7 +31,7 @@ Pure TypeScript library — no server, no frontend. Four domain modules in `src/
 
 `src/index.ts` re-exports all four modules. Tests mirror `src/` in `tests/`. Coverage reports in `coverage/`.
 
-**Design documents**: `docs/` contains ADRs, design specs, and source materials (Chess.com API spec sheets, market research).
+**Design documents**: `docs/` contains reader-mode editions, claim-level evidence, ADRs, strategy documents, governance material, and provenance-tracked source materials.
 
 <!-- ORGANVM:AUTO:START -->
 ## System Context (auto-generated — do not edit)

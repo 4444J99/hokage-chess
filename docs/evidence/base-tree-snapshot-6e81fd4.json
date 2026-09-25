@@ -1,0 +1,27 @@
+{
+  "receipt_type": "git-blob-snapshot",
+  "repository": "4444J99/hokage-chess",
+  "commit": "6e81fd42e79d94fa3537648aa47fb3e7f0e7c3e4",
+  "tree": "0c023403873d7f83130be57b5a330a1d287d4cb9",
+  "observed_at": "2026-08-31T22:30:00Z",
+  "method": "git show <commit>:<path> | sha256sum",
+  "blobs": [
+    {
+      "path": "src/analytics.ts",
+      "sha256": "4103c4a66a0e460ec84e7b3d1e9cf78ce256aa6c87cb6f3c898907805d0c890a"
+    },
+    {
+      "path": "src/content-strategy.ts",
+      "sha256": "37336b292de1ad11fd6945921d9dffe0fc4ea062b00c5296f906976b0b7fe54c"
+    },
+    {
+      "path": "src/growth.ts",
+      "sha256": "4c5a95d2d78fa9bd8f564cf07a7adbacf01e0d88389aec33acfc6d7c7b2d9af9"
+    },
+    {
+      "path": "src/narrative.ts",
+      "sha256": "4cb5e6fe4088e53c276537e9f5e53a4b784effbb34517f223b724789ecb185e8"
+    }
+  ],
+  "boundary": "These hashes bind the named files at the exact base commit. Reader-mode edits to comments or documentation are not represented as part of that historical tree."
+}

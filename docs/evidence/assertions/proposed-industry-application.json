@@ -1,0 +1,19 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "hokage_proposed_industry_application_20260831",
+  "assertion_class": "inference",
+  "statement": "Because the prototype formalizes caller-supplied content planning, narrative structure, metrics review, and growth arithmetic, chess creator operations are a substantive proposed application; no creator engagement, product deployment, or outcome is established.",
+  "inference_label": "Proposed creator-operations mapping, not pilot, deployment, or outcome evidence.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "hokage-business-workflow-analysis",
+      "independence_group": "reader-mode-business-analysis",
+      "evidence_type": "artifact",
+      "reference": "docs/audiences/business.md",
+      "body_hash": "sha256:0d47acdc4cfb2565f4a072dd4028cd9ae534cefd145c076c29629f89c5a1e1fa",
+      "observed_at": "2026-08-31T22:45:00Z"
+    }
+  ]
+}

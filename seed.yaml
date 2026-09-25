@@ -1,4 +1,4 @@
-# seed.yaml — Automation Contract for organvm-iii-ergon/hokage-chess
+# seed.yaml — Automation Contract for 4444J99/hokage-chess
 # Schema: seed/v1.0
 # Updated: AUTONOMY Sprint Phase E (orphan resolution)
 
@@ -6,27 +6,25 @@ schema_version: "1.0"
 organ: III
 organ_name: Commerce
 repo: hokage-chess
-org: organvm-iii-ergon
+org: 4444J99
 
 metadata:
-  implementation_status: ACTIVE
+  implementation_status: PROTOTYPE
   tier: standard
   promotion_status: PUBLIC_PROCESS
-  deployment_url: "https://organvm-iii-ergon.github.io/hokage-chess/"
-  deployment_platform: github-pages
-  last_validated: 2026-02-28
-  generated: 2026-02-12
+  last_validated: "2026-08-31"
+  generated: "2026-02-12"
   sprint: AUTONOMY
 
 agents:
   - name: ci
     trigger: on_push
-    workflow: .github/workflows/ci-minimal.yml
+    workflow: .github/workflows/ci.yml
     description: "Continuous integration pipeline"
 
 produces:
   - type: product-artifact
-    description: "Deployed product, SaaS service, or commercial tool"
+    description: "Prototype TypeScript helper library; no deployed end-user product is currently evidenced"
     consumers: [ORGAN-IV]
 
   - type: community_signal

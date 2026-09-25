@@ -1,0 +1,181 @@
+contract_name: project-record.v1
+contract_version: 1
+project_id: hokage-chess
+name: Hokage Chess
+canonical_repository: 4444J99/hokage-chess
+former_repositories:
+  - organvm-iii-ergon/hokage-chess
+repository_role: canonical
+documentation_class: B
+one_sentence: >-
+  A prototype TypeScript library that encodes content-planning, narrative,
+  analytics, and growth heuristics for a chess creator without yet ingesting
+  platform data or providing an end-user application.
+problem: >-
+  Independent chess creators need a repeatable way to frame serial stories,
+  inspect content choices, review supplied performance data, and challenge the
+  assumptions behind a growth plan without mistaking the model for proven
+  channel performance.
+intended_users:
+  - chess creators and content operators evaluating the proposed workflow
+  - software engineers inspecting the prototype utilities
+  - project evaluators inspecting scope, authorship, and evidence
+implementation_status: PROTOTYPE
+deployment_status: not-deployed
+authorship:
+  owner: Anthony James Padavano
+  role: project owner, product designer, and agent-directed implementation lead
+  contributions:
+    - project and content-system framing
+    - repository and documentation architecture
+    - strategy-source integration and provenance
+    - direction and integration of the TypeScript prototype
+    - ORGANVM project placement and governance
+  collaborators: []
+  generated:
+    - >-
+      The core TypeScript modules and their tests were introduced in a commit
+      that records Claude Opus 4.6 as co-author.
+  inherited:
+    - >-
+      Six pre-existing Hokage Chess strategy, theory, research, and specification
+      artifacts were imported from a local source archive under a provenance manifest.
+  external:
+    - Ki-Shō-Ten-Ketsu narrative form
+    - platform-derived metric names and policy-threshold assumptions
+claim_references:
+  - id: current-implementation
+    claim_posture: partial
+    assertion_contract: assertion-evidence.v1
+    assertion_id: hokage_current_implementation_20260831
+    assertion_ref: docs/evidence/assertions/current-implementation.json
+    scope: capability
+    placements: [readme, general, technical, business, evidence]
+  - id: runtime-boundary
+    claim_posture: contradicted
+    assertion_contract: assertion-evidence.v1
+    assertion_id: hokage_runtime_boundary_20260831
+    assertion_ref: docs/evidence/assertions/runtime-boundary.json
+    scope: limitation
+    placements: [readme, general, technical, business, evidence]
+  - id: verification-state
+    claim_posture: contradicted
+    assertion_contract: assertion-evidence.v1
+    assertion_id: hokage_verification_state_20260831
+    assertion_ref: docs/evidence/assertions/verification-state.json
+    scope: status
+    placements: [readme, technical, evidence]
+  - id: project-status
+    claim_posture: partial
+    assertion_contract: assertion-evidence.v1
+    assertion_id: hokage_project_status_20260831
+    assertion_ref: docs/evidence/assertions/project-status.json
+    scope: deployment
+    placements: [readme, general, technical, business, evidence]
+  - id: implementation-authorship
+    claim_posture: implemented
+    assertion_contract: assertion-evidence.v1
+    assertion_id: hokage_authorship_implementation_commit
+    assertion_ref: docs/evidence/assertions/authorship.json
+    scope: authorship
+    placements: [readme, technical, evidence]
+  - id: source-material-provenance
+    claim_posture: implemented
+    assertion_contract: assertion-evidence.v1
+    assertion_id: hokage_source_material_provenance
+    assertion_ref: docs/evidence/assertions/provenance.json
+    scope: provenance
+    placements: [readme, general, business, evidence]
+  - id: outcomes-boundary
+    claim_posture: unknown
+    assertion_contract: assertion-evidence.v1
+    assertion_id: hokage_outcomes_boundary_20260831
+    assertion_ref: docs/evidence/assertions/outcomes-boundary.json
+    scope: outcome
+    placements: [readme, general, technical, business, evidence]
+  - id: proposed-industry-application
+    claim_posture: proposed
+    assertion_contract: assertion-evidence.v1
+    assertion_id: hokage_proposed_industry_application_20260831
+    assertion_ref: docs/evidence/assertions/proposed-industry-application.json
+    scope: capability
+    placements: [business, evidence]
+limitations:
+  - id: no-runtime-surface
+    statement: >-
+      No CLI, API client, backend, dashboard, persistence layer, authentication,
+      scheduler, or packaged end-user runtime is present.
+    assertion_ref: docs/evidence/assertions/runtime-boundary.json
+    assertion_id: hokage_runtime_boundary_20260831
+  - id: broken-verification-predicate
+    statement: >-
+      The current dependency and configuration set does not install, test,
+      build, or lint cleanly, and CI does not fail closed on every such error.
+    assertion_ref: docs/evidence/assertions/verification-state.json
+    assertion_id: hokage_verification_state_20260831
+  - id: unvalidated-heuristics
+    statement: >-
+      Editorial scores, thresholds, growth targets, and revenue arithmetic are
+      design assumptions without validation against repository-owned outcome data.
+    assertion_ref: docs/evidence/assertions/outcomes-boundary.json
+    assertion_id: hokage_outcomes_boundary_20260831
+  - id: no-outcome-evidence
+    statement: >-
+      The repository does not establish product adoption, revenue, channel
+      growth, or predictive performance.
+    assertion_ref: docs/evidence/assertions/outcomes-boundary.json
+    assertion_id: hokage_outcomes_boundary_20260831
+audience_routes:
+  - mode: general
+    path: docs/audiences/general.md
+    primary_question: What is Hokage Chess, what exists now, and why might it matter?
+    surface: public
+    search_intents: [informational, problem]
+  - mode: technical
+    path: docs/audiences/technical.md
+    primary_question: What is implemented, how is it structured, and can it be verified?
+    surface: public
+    search_intents: [technical, implementation, hiring]
+  - mode: business
+    path: docs/audiences/business.md
+    primary_question: What creator workflow could this change, and what value remains proposed?
+    surface: public
+    search_intents: [commercial, comparative]
+industries:
+  - name: chess creator operations
+    status: proposed
+    claim_references: [proposed-industry-application]
+concepts:
+  - chess-content-strategy
+  - creator-analytics
+  - evidence-bounded-documentation
+  - growth-phase-gates
+  - ki-sho-ten-ketsu
+  - narrative-content-planning
+search_intents:
+  - intent: informational
+    terms:
+      - chess content strategy system
+      - narrative chess videos
+  - intent: problem
+    terms:
+      - repeatable workflow for chess creators
+      - reviewing chess channel content decisions
+  - intent: technical
+    terms:
+      - TypeScript content strategy library
+      - chess creator analytics data model
+  - intent: commercial
+    terms:
+      - chess creator operations workflow
+      - content planning system for chess channels
+  - intent: hiring
+    terms:
+      - content systems architecture portfolio
+      - agent-directed TypeScript project evidence
+links:
+  repository: https://github.com/4444J99/hokage-chess
+  documentation: docs/audiences/general.md
+  evidence: docs/evidence/README.md
+generated_at: "2026-08-31T22:45:00Z"
+verified_at: "2026-08-31T22:45:00Z"

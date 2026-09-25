@@ -1,585 +1,315 @@
-# HokageChess
+# Hokage Chess
 
-A data-driven content platform for chess creators: storytelling framework, analytics engine, and growth system to build sustainable channels on YouTube and beyond.
+> A prototype TypeScript library that encodes content-planning, narrative,
+> analytics, and growth heuristics for a chess creator without yet ingesting
+> platform data or providing an end-user application.
 
-[![CI](https://github.com/organvm-iii-ergon/hokage-chess/actions/workflows/ci.yml/badge.svg)](https://github.com/organvm-iii-ergon/hokage-chess/actions/workflows/ci.yml)
-[![Coverage](https://img.shields.io/badge/coverage-pending-lightgrey)](https://github.com/organvm-iii-ergon/hokage-chess)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/organvm-iii-ergon/hokage-chess/blob/main/LICENSE)
-[![Organ III](https://img.shields.io/badge/Organ-III%20Ergon-F59E0B)](https://github.com/organvm-iii-ergon)
-[![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/organvm-iii-ergon/hokage-chess)
-[![TypeScript](https://img.shields.io/badge/lang-TypeScript-informational)](https://github.com/organvm-iii-ergon/hokage-chess)
-[![YouTube](https://img.shields.io/badge/platform-YouTube-red?logo=youtube&logoColor=white)](https://github.com/organvm-iii-ergon/hokage-chess)
-[![Chess.com](https://img.shields.io/badge/API-Chess.com-81b64c)](https://github.com/organvm-iii-ergon/hokage-chess)
-[![Data-Driven](https://img.shields.io/badge/approach-data--driven-blueviolet)](https://github.com/organvm-iii-ergon/hokage-chess)
+[![Status: Prototype](https://img.shields.io/badge/status-prototype-orange)](project-record.yml)
+[![Documentation class: B](https://img.shields.io/badge/docs-class%20B-blue)](project-record.yml)
+[![Language: TypeScript](https://img.shields.io/badge/language-TypeScript-3178c6)](src/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 
----
+[Two-minute explanation](docs/audiences/general.md) ·
+[Technical inspection](docs/audiences/technical.md) ·
+[Operational interpretation](docs/audiences/business.md) ·
+[Evidence record](docs/evidence/README.md) ·
+[Source](src/) · [Test source](tests/)
 
-## Table of Contents
+## What am I looking at?
 
-1. [Business Problem](#1-business-problem)
-2. [Solution Overview](#2-solution-overview)
-3. [Technical Architecture](#3-technical-architecture)
-4. [Installation and Setup](#4-installation-and-setup)
-5. [Usage and API](#5-usage-and-api)
-6. [Working Examples](#6-working-examples)
-7. [Business Model](#7-business-model)
-8. [Testing and Quality](#8-testing-and-quality)
-9. [Cross-References](#9-cross-references)
-10. [Contributing](#10-contributing)
-11. [License and Author](#11-license-and-author)
+This is the source repository and documented project record for Hokage Chess.
+A repository is the organized collection of code, strategy documents, design
+decisions, source materials, and revision history used to inspect how a project
+was developed.
 
----
+Hokage Chess is currently a **prototype library**, not an end-user product. The
+repository contains TypeScript functions that model parts of a chess-content workflow, but it does not contain
+the Python application, command-line interface, platform integrations,
+dashboard, database, or operational deployment previously described here.
 
-## 1. Business Problem
+## Choose your reading path
 
-The chess content creator economy is saturated with a paradox: chess is experiencing its greatest cultural renaissance since the Fischer-Spassky match of 1972, yet the overwhelming majority of new chess content follows identical patterns that produce diminishing returns. Thousands of creators upload "How to Beat 800 ELO" videos every week. The educational approach dominates because it is safe, but safety does not build audiences. What is missing is not more chess instruction but a coherent content strategy that treats chess videos as narrative media rather than classroom recordings.
+| I am reading as… | Start here |
+|---|---|
+| A general or nontechnical reader | [What Hokage Chess is](docs/audiences/general.md) |
+| A software engineer | [Actual architecture, interfaces, and verification state](docs/audiences/technical.md) |
+| A creator, operator, or prospective client | [Proposed workflow and commercial boundaries](docs/audiences/business.md) |
 
-### The Creator Economy Gap
+Evaluators can use the [claim-level evidence record](docs/evidence/README.md),
+the [revision history](https://github.com/4444J99/hokage-chess/commits/main),
+and the technical inspection route together.
 
-Three structural problems define the chess content landscape in 2026:
+## Project at a glance
 
-**Problem 1: Undifferentiated Content.** The average chess creator produces educational content that is functionally interchangeable with hundreds of competitors. Without a distinctive narrative voice or content framework, small creators cannot compete on production quality alone against channels with professional editing teams and sponsorship budgets. The result is a red ocean where new creators exhaust their motivation producing content that algorithms cannot distinguish from incumbent offerings.
+| | |
+|---|---|
+| **What it is** | A TypeScript library and strategy corpus for modeling chess-content decisions. |
+| **Problem addressed** | Turning isolated content decisions into a repeatable narrative, review, and planning process. |
+| **Current state** | `prototype`; substantive source modules exist, but there is no usable end-user application or verified deployment. |
+| **Intended users** | Chess creators and content operators evaluating the model; engineers and evaluators inspecting the prototype. |
+| **What Anthony built** | Project framing, repository and documentation architecture, strategy integration, and direction/integration of the TypeScript prototype. The core implementation commit records Claude Opus 4.6 as co-author. |
+| **Evidence** | Five TypeScript source modules, six Jest suite files, provenance records, ADRs, and Git history. Current automated verification is blocked by toolchain conflicts. |
+| **Known limitations** | No API clients, CLI, UI, persistence, authentication, production analytics, user-adoption evidence, or validated performance/outcome metrics. |
 
-**Problem 2: No Data Feedback Loop.** Most chess creators make content decisions based on intuition or imitation. They watch what GothamChess or Levy Rozman does and attempt smaller-scale versions. This misses the fundamental insight that content strategy is a data problem. Click-through rates, audience retention curves, subscriber velocity, and revenue diversification trajectories are all measurable, optimizable systems. Without structured analytics, creators iterate blindly and abandon the effort when early results disappoint.
+## Truth boundary
 
-**Problem 3: The Monetization Cliff.** YouTube monetization requires 1,000 subscribers and 4,000 watch hours. For most chess creators, this threshold takes 12-18 months to reach organically. The gap between starting a channel and earning the first dollar creates an unsustainable period that kills the majority of chess content ventures before they reach viability. The solution is not to wait for YouTube ad revenue but to build diversified revenue from day one: coaching, tips, community access, and sponsorship pipelines that generate income while the subscriber base compounds.
+The current `main` branch supports a narrower claim than the earlier README.
 
-### Market Opportunity
+| Capability | Current evidence | Boundary |
+|---|---|---|
+| Title, thumbnail, idea, checklist, and weekly-plan heuristics | [`src/content-strategy.ts`](src/content-strategy.ts) | Pure, caller-invoked functions; no content generation, scheduler, or platform connection. |
+| CTR and retention classification, weekly scorecards, phase gates, and red flags | [`src/analytics.ts`](src/analytics.ts) | Operates only on metrics supplied by a caller; it does not fetch YouTube data. |
+| Growth-target and revenue arithmetic | [`src/growth.ts`](src/growth.ts) | Encodes design assumptions and hard-coded targets; it does not track a real channel or income. |
+| Ki-Shō-Ten-Ketsu structures and chapter labels | [`src/narrative.ts`](src/narrative.ts) | Produces data structures and strings; it does not analyze games or write scripts. |
+| Automated tests | [`tests/`](tests/) | Test source exists, but the current TypeScript/`ts-jest` dependency combination prevents execution. |
+| YouTube, Chess.com, Ko-fi, or scheduler integration | None in the current tree | Proposed only. |
+| CLI, dashboard, backend, database, or packaged runtime | None in the current tree | Not implemented. |
+| Product deployment, adoption, revenue, or channel-growth outcomes | No supporting record in the current tree | Not established. |
 
-The chess content market is large and growing. Chess.com reached 150 million accounts. YouTube chess content generates hundreds of millions of monthly views. Twitch chess viewership surged and stabilized at levels that would have been unimaginable five years ago. But the revenue concentration is extreme: the top 20 chess creators capture the vast majority of sponsorship and ad revenue. HokageChess targets the underserved middle market, creators who want to build sustainable content businesses without requiring millions of subscribers.
+The full audit trail is in [the evidence record](docs/evidence/README.md).
 
----
+## Canonical project documentation
 
-## 2. Solution Overview
+### Project thesis
 
-HokageChess is a strategic content engine with four integrated subsystems that address each dimension of the chess content problem: narrative differentiation, data-driven optimization, diversified monetization, and structured growth.
+Hokage Chess explores a specific editorial proposition: chess content can be
+structured as serial narrative and reviewed as a feedback system rather than
+treated only as a sequence of isolated tutorials.
 
-### Content Strategy Engine
+The strategy corpus connects four concerns:
 
-The content strategy engine provides systematic frameworks for every dimension of video production. Rather than leaving creative decisions to ad hoc inspiration, the engine codifies proven patterns:
+1. **Narrative differentiation** — organize videos as continuing arcs with
+   stakes, setbacks, rivals, and resolution.
+2. **Decision heuristics** — make title, thumbnail, hook, and format choices
+   inspectable rather than purely intuitive.
+3. **Measurement discipline** — review caller-supplied click, retention, view,
+   and subscriber data through explicit thresholds.
+4. **Growth planning** — express milestones and revenue streams as a staged
+   model whose assumptions can be challenged.
 
-- **Title Formula:** Every video title follows the structure `[EMOTION] + [STAKES] + [CONTEXT]`. Example: "I Risked My Rating in the Craziest Line Against the Sicilian." This formula consistently produces 5-8% CTR in testing across the chess content vertical.
-- **Thumbnail Optimization:** Data from top-performing chess content indicates that the highest-CTR thumbnails combine a face showing emotion, a board position or arrow overlay, and 2-4 words of bold text. The system provides thumbnail scoring against these criteria.
-- **Narrative Arc Planning:** Content is organized into quarterly narrative themes that create continuity across videos. Rather than isolated educational topics, the channel tells a story across months: climb from chaos, rival encounters, redemption arcs.
+This is a design argument, not evidence that the model grows a channel or
+produces revenue.
 
-### Analytics Dashboard
+### Problem framing
 
-The analytics subsystem tracks the metrics that actually predict channel growth, not vanity metrics like total views:
+The project began from three working hypotheses about independent chess
+creators:
 
-- **CTR Tracking** with a target band of 5-8% and red-line alerts below 3%
-- **Retention Analysis** targeting 50%+ audience retention at the 30-second mark, the single strongest predictor of algorithmic promotion
-- **Subscriber Growth Curves** with phase-gated projections and velocity tracking
-- **Weekly Scorecards** that aggregate performance into a single decision-ready summary
+- instructional videos can become difficult to distinguish when their format,
+  framing, and promise are interchangeable;
+- platform dashboards provide measurements without necessarily producing a
+  disciplined editorial decision loop;
+- waiting for a single platform revenue threshold can make a creator's plan
+  unnecessarily brittle.
 
-### Growth System
+Those hypotheses motivate the repository. They have not been validated here by
+a market study, controlled content experiment, user cohort, or deployment
+record.
 
-Growth follows a four-phase model with explicit gates and red-line indicators:
+### The four modeled domains
 
-| Quarter | Target | Phase Gate |
-|---------|--------|------------|
-| Q1 | 33 to 250 subscribers | 3 videos/week consistency established |
-| Q2 | 250 to 1,000 subscribers | CTR above 5%, retention above 50% at 30s |
-| Q3 | 1,000 to 3,500 subscribers | YPP achieved, coaching pipeline active |
-| Q4 | 3,500 to 10,000 subscribers | Sponsorship pipeline, community access tier |
+#### Content strategy
 
-### Narrative Framework
+[`src/content-strategy.ts`](src/content-strategy.ts) implements deterministic
+helpers for:
 
-Every video uses the Ki-Sho-Ten-Ketsu four-act structure adapted for chess content:
+- checking a title for configured emotion/stakes patterns and a 60-character
+  limit;
+- scoring four boolean thumbnail criteria;
+- ranking a caller-supplied video idea from `skip` through `must_make`;
+- assembling an upload-readiness checklist; and
+- selecting up to three long-form ideas and three shorts from supplied ideas.
 
-1. **Ki (Introduction):** Hook with a provocative position, emotional stake, or rivalry callback. 0-15 seconds.
-2. **Sho (Development):** Build the strategic tension. Explain the position, the opponent, the stakes. 15 seconds to midpoint.
-3. **Ten (Twist):** The unexpected move, the blunder, the sacrifice that changes everything. The moment the viewer did not see coming.
-4. **Ketsu (Conclusion):** Resolution and reflection. What was learned, what changed, what comes next in the narrative arc.
+These rules are editorial heuristics. The repository does not contain evidence
+that they predict click-through rate or audience growth.
 
-This structure replaces the tutorial format ("today we learn the London System") with narrative media ("I played the most dangerous line and this is what happened").
+#### Analytics
 
----
+[`src/analytics.ts`](src/analytics.ts) calculates click-through rate, assigns
+configured CTR and 30-second-retention labels, aggregates supplied video
+metrics into a weekly scorecard, evaluates caller-defined phase gates, and
+returns red-flag messages for selected threshold conditions.
 
-## Architecture
+The module has no network client or ingestion layer. A consumer must obtain,
+validate, and pass every metric into the library.
 
-```
+#### Growth
+
+[`src/growth.ts`](src/growth.ts) defines four quarterly phase labels, target
+objects, progress arithmetic, active-stream revenue sums, a simple annualized
+revenue calculation, and a threshold check labeled for YouTube Partner Program
+eligibility.
+
+The values are repository assumptions, not live platform policy, forecasts, or
+observed project results. They must be revalidated before operational use.
+
+#### Narrative
+
+[`src/narrative.ts`](src/narrative.ts) adapts Ki-Shō-Ten-Ketsu into four timed
+segments—introduction, development, twist, and conclusion—and defines four
+serial arc plans. It can construct and validate a narrative object and render
+chapter timestamps.
+
+The formal choice preserves the project's strongest original idea: a chess
+video can be treated as narrative media. The code formalizes that idea without
+claiming that one structure is universally optimal.
+
+## Actual architecture
+
+```text
 hokage-chess/
 ├── src/
-│   ├── analytics/           # YouTube Data API + Chess.com API integration
-│   │   ├── youtube_client.py
-│   │   ├── chesscom_client.py
-│   │   ├── retention_analyzer.py
-│   │   └── ctr_tracker.py
-│   ├── content/             # Content strategy engine
-│   │   ├── title_generator.py
-│   │   ├── thumbnail_scorer.py
-│   │   ├── narrative_planner.py
-│   │   └── calendar.py
-│   ├── growth/              # Growth tracking and phase gates
-│   │   ├── subscriber_tracker.py
-│   │   ├── phase_gates.py
-│   │   ├── weekly_scorecard.py
-│   │   └── red_line_alerts.py
-│   ├── monetization/        # Revenue pipeline management
-│   │   ├── coaching_tracker.py
-│   │   ├── sponsorship_pipeline.py
-│   │   ├── ypp_estimator.py
-│   │   └── revenue_dashboard.py
-│   └── cli.py               # Command-line interface
+│   ├── analytics.ts
+│   ├── content-strategy.ts
+│   ├── growth.ts
+│   ├── narrative.ts
+│   └── index.ts
 ├── tests/
-│   ├── test_analytics.py
-│   ├── test_content.py
-│   ├── test_growth.py
-│   └── test_monetization.py
+│   ├── analytics.test.ts
+│   ├── content-strategy.test.ts
+│   ├── cross-client-bleed-guard.test.ts
+│   ├── growth.test.ts
+│   ├── index.test.ts
+│   └── narrative.test.ts
 ├── docs/
-│   ├── ADR/
-│   │   └── 001-kishotenketsu-over-tutorial.md
-│   ├── content-strategy.md
-│   └── growth-model.md
-├── .github/
-│   └── workflows/
-│       └── ci-python.yml
-├── pyproject.toml
-├── CLAUDE.md
-├── CHANGELOG.md
-├── LICENSE
-└── README.md
+│   ├── adr/
+│   ├── audiences/
+│   ├── business/
+│   ├── evidence/
+│   ├── governance/
+│   ├── pitch/
+│   ├── source-materials/
+│   └── strategy/
+├── project-record.yml
+├── package.json
+├── jest.config.js
+└── tsconfig.json
 ```
 
-### Analytics Pipeline
+The domain modules are synchronous and in-memory. The normal data path is:
 
-The analytics pipeline integrates two external data sources and produces actionable weekly reports:
-
-```
-Chess.com API ──→ Game Data Ingestion ──→ Performance Metrics
-                                              │
-YouTube Data API ──→ Channel Analytics ──→ Content Metrics
-                                              │
-                                              ▼
-                                     Weekly Scorecard
-                                     ├── CTR by video
-                                     ├── Retention curves
-                                     ├── Subscriber velocity
-                                     ├── Revenue by stream
-                                     └── Red-line alerts
+```text
+caller-supplied objects → pure TypeScript heuristics → returned objects/strings
 ```
 
-**Chess.com API Integration.** Fetches game history, rating progression, opponent data, and opening statistics. Used to identify the most compelling games for content (blunders, brilliant moves, rating milestones) and to track the player improvement narrative that forms the backbone of the channel story.
+There is no external service, event stream, storage layer, or UI in that path.
 
-**YouTube Data API Integration.** Pulls video performance metrics including impressions, CTR, average view duration, retention curves, and subscriber attribution. Powers the analytics dashboard and feeds the content optimization engine with feedback on what title formulas, thumbnail styles, and narrative structures produce the best results.
+## Development and verification state
 
-**Weekly Scorecard Generator.** Aggregates all data sources into a single report that answers: "What should I film this week, and how should I title/thumbnail it?" The scorecard includes top-performing content patterns, underperforming videos with diagnosis, and content calendar recommendations for the next two weeks.
-
-### API Integrations
-
-| Service | Purpose | Authentication |
-|---------|---------|---------------|
-| YouTube Data API v3 | Channel analytics, video performance | OAuth 2.0 |
-| Chess.com Public API | Game history, rating, opponents | Public (no auth) |
-| Ko-fi Webhooks | Donation tracking | Webhook secret |
-| Social media schedulers | Cross-platform distribution | API keys |
-
----
-
-## 4. Installation and Setup
-
-### Prerequisites
-
-- Python 3.11+
-- YouTube Data API credentials (OAuth 2.0 client)
-- Chess.com username
-- (Optional) Ko-fi creator account for donation tracking
-
-### Quick Start
+The declared package scripts are:
 
 ```bash
-## Clone the repository
-git clone https://github.com/organvm-iii-ergon/hokage-chess.git
-cd hokage-chess
-
-## Create virtual environment
-python -m venv .venv
-source .venv/bin/activate
-
-## Install dependencies
-pip install -e ".[dev]"
-
-## Copy environment template and fill in credentials
-cp .env.example .env
-## Edit .env with your YouTube API credentials and Chess.com username
-
-## Verify installation
-hokage --version
-hokage health-check
+npm run build
+npm test
+npm run lint
+npm run dev
 ```
 
-### Environment Configuration
+They do **not** currently form a clean quick start. A fresh audit on 2026-08-31
+found:
 
-```bash
-## .env.example
-YOUTUBE_CLIENT_ID=your-oauth-client-id
-YOUTUBE_CLIENT_SECRET=your-oauth-client-secret
-CHESSCOM_USERNAME=your-chess-com-username
-KOFI_WEBHOOK_SECRET=optional-kofi-secret
-HOKAGE_DATA_DIR=./data
-HOKAGE_LOG_LEVEL=INFO
+| Check | Observed result |
+|---|---|
+| `npm ci` | Fails dependency resolution because TypeScript 7 conflicts with the declared `@typescript-eslint` peer range. |
+| `npm ci --legacy-peer-deps` | Installs dependencies as a diagnostic workaround. |
+| `npm test -- --runInBand` | Fails before running tests because `ts-jest` cannot use the installed TypeScript 7 compiler API. |
+| `npm run build` | Fails because `console` is not provided by the configured `ES2022` library set. |
+| `npm run lint` | Fails because ESLint 10 cannot find a flat configuration file. |
+
+The GitHub Actions workflow currently treats several quality failures as
+non-blocking. A green workflow should therefore not be read as proof that the
+current source passes tests or builds.
+
+See the [technical edition](docs/audiences/technical.md) for interfaces,
+failure modes, security boundaries, and the repair sequence.
+
+## Function-level example
+
+This example describes the source interface; it is not a claim that the package
+currently builds or is published to npm.
+
+```ts
+import { scoreTitleFormula } from "./src/content-strategy";
+
+const result = scoreTitleFormula("I FINALLY Beat the 1500 Sicilian");
+// { score: 3, has_emotion: true, has_stakes: true, length_ok: true, feedback: [] }
 ```
 
-### First Run
-
-```bash
-## Authenticate with YouTube (opens browser for OAuth flow)
-hokage auth youtube
-
-## Import your Chess.com game history
-hokage import games --username YOUR_USERNAME --months 6
-
-## Generate your first weekly scorecard
-hokage scorecard generate
-```
-
----
-
-## 5. Usage and API
-
-### Content Calendar
-
-The content calendar manages a 3+3 weekly schedule: three long-form videos (Monday, Wednesday, Friday) and three Shorts (Tuesday, Thursday, Saturday). All content is planned two weeks in advance with batch filming sessions.
-
-```bash
-## View current two-week content plan
-hokage calendar show
-
-## Generate next week's content plan based on analytics
-hokage calendar plan --week next
-
-## Add a video to the calendar
-hokage calendar add \
-  --date 2026-02-17 \
-  --type long-form \
-  --title "I Found the ONLY Move That Wins Against the Fried Liver" \
-  --narrative-act climax \
-  --quarterly-arc "Rival Wars"
-
-## List all videos in the current quarterly narrative arc
-hokage calendar arc --quarter Q1-2026
-```
-
-### Analytics Queries
-
-```bash
-## Weekly scorecard with all metrics
-hokage scorecard generate --format markdown
-
-## CTR analysis for the last 30 days
-hokage analytics ctr --days 30
-
-## Retention analysis for a specific video
-hokage analytics retention --video-id VIDEO_ID
-
-## Subscriber velocity and phase gate status
-hokage growth status
-
-## Revenue breakdown by stream
-hokage revenue summary --month 2026-02
-```
-
-### Title and Thumbnail Scoring
-
-```bash
-## Score a proposed title against the formula
-hokage content score-title "I Sacrificed My Queen and This Happened"
-## Output: Score 8.2/10 — Emotion: YES (sacrifice), Stakes: YES (queen), Context: PARTIAL (add opponent context)
-
-## Evaluate a thumbnail concept
-hokage content score-thumbnail \
-  --has-face true \
-  --emotion "shock" \
-  --text-words 3 \
-  --has-board-position true
-## Output: Score 9.1/10 — All criteria met
-```
-
-### Narrative Planning
-
-```bash
-## View quarterly narrative arc
-hokage narrative arc --quarter Q1-2026
-
-## Plan a Ki-Sho-Ten-Ketsu structure for a video
-hokage narrative structure \
-  --game-id CHESSCOM_GAME_ID \
-  --hook "rating milestone" \
-  --twist "unexpected sacrifice at move 24"
-```
-
----
-
-## 6. Working Examples
-
-### Example 1: Video Optimization Workflow
-
-This is the end-to-end workflow for producing an optimized chess video, from game selection to publication:
-
-```bash
-## Step 1: Identify the most compelling game from recent play
-hokage games rank --days 7 --criteria drama
-## Output:
-## 1. Game #48291 — Rating: 1247 vs 1312 — Queen sacrifice leads to checkmate (Drama: 9.4)
-## 2. Game #48287 — Rating: 1247 vs 1198 — Opponent blunders in winning position (Drama: 7.8)
-## 3. Game #48290 — Rating: 1247 vs 1275 — Endgame grind, down material (Drama: 6.2)
-
-## Step 2: Generate title candidates for the top game
-hokage content titles --game-id 48291 --count 5
-## Output:
-## 1. "I Sacrificed My QUEEN and My Opponent Had No Idea" (Score: 8.7)
-## 2. "The Queen Sacrifice That Shouldn't Have Worked" (Score: 8.3)
-## 3. "How I Beat a 1300 With the CRAZIEST Queen Sacrifice" (Score: 7.9)
-## 4. "My Opponent Thought I Blundered My Queen..." (Score: 8.5)
-## 5. "This Queen Sacrifice is NOT What You Think" (Score: 7.2)
-
-## Step 3: Generate a Ki-Sho-Ten-Ketsu script outline
-hokage narrative structure --game-id 48291
-## Output:
-## Ki (0:00-0:15):  "I'm about to show you the game that changed how I think about chess."
-## Sho (0:15-4:00): Build up — solid opening, slight edge, opponent applies pressure
-## Ten (4:00-6:00): The sacrifice — queen for two pieces and an attack that should not work
-## Ketsu (6:00-7:30): The checkmate, what I learned, tease the next rivalry video
-
-## Step 4: Schedule the video
-hokage calendar add --date 2026-02-19 --type long-form --game-id 48291 --title-index 1
-```
-
-### Example 2: Growth Phase Gate Review
-
-```bash
-## Check current growth phase status
-hokage growth status
-## Output:
-## Current Phase: Q1 (33 → 250 subscribers)
-## Current Subscribers: 147
-## Velocity: +18/week (14-day average)
-## Projected Phase Gate: Week 7 of 12 (on track)
-#
-## Phase Gate Criteria:
-##   ✓ Publishing 3 videos/week consistently (8 consecutive weeks)
-##   ✓ CTR above 4% (current: 5.3%)
-##   ✗ Retention above 50% at 30s (current: 44.2%) — RED LINE: focus on hooks
-#
-## Recommendation: Retention is below target. Review Ki (hook) sections
-## of last 5 videos. Consider A/B testing hook styles: question vs. statement vs. preview.
-
-## Get specific red-line alert details
-hokage growth alerts
-## Output:
-## ALERT: 30-second retention at 44.2% (target: 50%)
-## — Last 5 videos averaged 42.8% retention at 30s
-## — Best performer: "Queen Sacrifice" at 58.1% (strong emotional hook)
-## — Worst performer: "London System Guide" at 31.4% (educational opener)
-## — Diagnosis: Educational openings underperform narrative hooks by 20+ points
-```
-
-### Example 3: Revenue Dashboard
-
-```bash
-hokage revenue summary --month 2026-02
-## Output:
-## Revenue Summary — February 2026
-## ─────────────────────────────────
-## Ko-fi Tips:          tracked  (12 donations)
-## Coaching Sessions:    pending (launching Q2)
-## YPP Ad Revenue:       pending (not yet eligible — 147/1000 subs)
-## Sponsorships:         pending (pipeline building)
-## ─────────────────────────────────
-## Total:               tracked
-## Run Rate:           projected (annualized from current month)
-## Target Run Rate:    scaling by Month 12
-```
-
----
-
-## 7. Business Model
-
-### Monetization Timeline
-
-The monetization strategy is phased to generate revenue before YouTube Partner Program eligibility, eliminating the "monetization cliff" that kills most small channels:
-
-| Phase | Timeline | Revenue Streams | Target Growth |
-|-------|----------|-----------------|---|
-| **Phase 0** (Months 1-3) | Q1 | Ko-fi tips, community building | Foundation |
-| **Phase 1** (Months 4-6) | Q2 | Add coaching sessions (6-10 per month) | Expansion |
-| **Phase 2** (Months 7-9) | Q3 | Add YPP ad revenue, first sponsorship inquiries | Acceleration |
-| **Phase 3** (Months 10-12) | Q4 | Add regular sponsorships, premium community tier | Scale |
-
-### Revenue Projections (Year 1)
-
-| Stream | Steady State | Projection |
-|--------|------|---|
-| Coaching | mid-range | strong growth |
-| Sponsorships | emerging | 12-month ramp |
-| YPP Ad Revenue | pending | post-threshold |
-| Ko-fi / Community | baseline | steady |
-| **Total** | **multi-stream** | **sustainable** |
-
-### Coaching Service Design
-
-Coaching is the highest-margin revenue stream and the earliest to activate. The service structure:
-
-- **Quick Review** (30 min): Single game analysis with written summary
-- **Deep Dive** (60 min): Full opening repertoire review or multi-game pattern analysis
-- **Monthly Mentorship**: Weekly session + async game review + personalized study plan
-- **Target capacity:** 6-10 sessions per month (avoid burnout while maintaining content production)
-
-### Sponsorship Pipeline
-
-Sponsorship readiness begins at 1,000 subscribers. Target sponsors include chess product companies (boards, clocks, software), online chess platforms, and chess education services. The pipeline tracks:
-
-- Outreach list and contact status
-- Rate card (CPM-based for video integration, flat fee for dedicated content)
-- Contract templates and deliverables tracking
-- Performance reporting for sponsor retention
-
----
-
-## 8. Testing and Quality
-
-### Test Strategy
-
-```bash
-## Run the full test suite
-pytest tests/ -v
-
-## Run tests with coverage
-pytest tests/ --cov=src --cov-report=term-missing
-
-## Run specific test module
-pytest tests/test_analytics.py -v
-
-## Type checking
-mypy src/
-
-## Linting
-ruff check src/ tests/
-```
-
-### Test Coverage Targets
-
-| Module | Target Coverage | Focus Areas |
-|--------|----------------|-------------|
-| `analytics/` | 90% | API response parsing, metric calculations, edge cases |
-| `content/` | 85% | Title scoring formula, thumbnail criteria, calendar logic |
-| `growth/` | 90% | Phase gate evaluation, red-line detection, velocity math |
-| `monetization/` | 80% | Revenue aggregation, projection calculations |
-
-### CI Pipeline
-
-The GitHub Actions workflow (`ci-python.yml`) runs on every push and pull request:
-
-1. **Lint** — ruff check + ruff format verification
-2. **Type Check** — mypy strict mode
-3. **Test** — pytest with coverage threshold enforcement (80% minimum)
-4. **Build** — verify package builds cleanly
-
-### Data Quality
-
-Analytics data is validated at ingestion:
-
-- YouTube API responses are schema-validated against known response shapes
-- Chess.com game data is deduplicated by game ID
-- Revenue data requires source attribution (no untracked income)
-- Weekly scorecards include data freshness indicators (stale data flagged if API fetch is >24h old)
-
----
-
-## 9. Cross-References
-
-### ORGAN-III Siblings
-
-HokageChess sits within [ORGAN III (Commerce)](https://github.com/organvm-iii-ergon), the revenue-generating arm of the eight-organ system. Related repositories:
-
-| Repository | Relationship |
-|-----------|-------------|
-| [`multi-camera--livestream--framework`](https://github.com/organvm-iii-ergon/multi-camera--livestream--framework) | Livestream production infrastructure for chess streaming sessions |
-| [`mirror-mirror`](https://github.com/organvm-iii-ergon/mirror-mirror) | Analytics and audience insights platform (shared analytics patterns) |
-| [`public-record-data-scrapper`](https://github.com/organvm-iii-ergon/public-record-data-scrapper) | ORGAN-III flagship; demonstrates the data pipeline architecture pattern this repo adapts for content analytics |
-| [`gamified-coach-interface`](https://github.com/organvm-iii-ergon/gamified-coach-interface) | Gamification patterns that inform the coaching service tier design |
-
-### Cross-Organ Dependencies
-
-| Organ | Repository | Connection |
-|-------|-----------|-----------|
-| ORGAN-V (Public Process) | [`public-process`](https://github.com/organvm-v-logos/public-process) | Building-in-public essays documenting the HokageChess content experiment |
-| ORGAN-VII (Marketing) | [`organvm-vii-kerygma`](https://github.com/organvm-vii-kerygma) | POSSE distribution for channel announcements and milestone posts |
-| ORGAN-IV (Orchestration) | [`orchestration-start-here`](https://github.com/organvm-iv-taxis/orchestration-start-here) | System governance and promotion pipeline |
-
-### System Context
-
-HokageChess is a content-commerce product that demonstrates a specific thesis within the eight-organ model: **creative content is a business system, not an artistic accident**. The analytics pipeline, growth model, and monetization structure are designed to be reproducible across content verticals, not just chess. The Ki-Sho-Ten-Ketsu narrative framework, the title formula, and the phase-gated growth model could be adapted for any niche content strategy with minimal modification.
-
-This repo contributes to the ORGAN-III portfolio angle: evidence of product-market thinking, sustained revenue generation, and the ability to package creative activity into commercially viable systems.
-
----
-
-## 10. Contributing
-
-### Development Setup
-
-```bash
-## Fork and clone
-git clone https://github.com/YOUR_USERNAME/hokage-chess.git
-cd hokage-chess
-
-## Install development dependencies
-pip install -e ".[dev]"
-
-## Install pre-commit hooks
-pre-commit install
-
-## Run the full quality check
-make check  # lint + type-check + test
-```
-
-### Contribution Guidelines
-
-- **Issues first.** Open an issue describing the proposed change before submitting a PR.
-- **Tests required.** All new functionality must include tests. Coverage must not decrease.
-- **Type hints required.** All function signatures must include type annotations.
-- **Commit messages.** Use imperative mood, keep the title under 72 characters. Example: `feat: add retention curve visualization to weekly scorecard`.
-- **Branch naming.** Use `feat/`, `fix/`, `docs/`, or `refactor/` prefixes.
-
-### Areas Open for Contribution
-
-- Additional API integrations (Lichess, Twitch analytics)
-- Visualization components for the analytics dashboard
-- Alternative narrative framework templates beyond Ki-Sho-Ten-Ketsu
-- Localization of title formula patterns for non-English chess content markets
-
----
-
-## Contact
-
-Questions, feedback, or ideas? Connect with the project on [GitHub](https://github.com/4444J99) or open an issue on this repository.
-
----
-
-## 11. License and Author
-
-**License:** [MIT](./LICENSE)
-
-**Author:** [@4444j99](https://github.com/4444j99)
-
-**Organization:** [organvm-iii-ergon](https://github.com/organvm-iii-ergon) (ORGAN III -- Commerce)
-
-### The Eight-Organ System
-
-HokageChess is one of 81 repositories across 8 GitHub organizations that form a unified creative-institutional system:
-
-| Organ | Domain | GitHub Organization |
-|-------|--------|-------------------|
-| I | Theory | [organvm-i-theoria](https://github.com/organvm-i-theoria) |
-| II | Art | [organvm-ii-poiesis](https://github.com/organvm-ii-poiesis) |
-| **III** | **Commerce** | **[organvm-iii-ergon](https://github.com/organvm-iii-ergon)** |
-| IV | Orchestration | [organvm-iv-taxis](https://github.com/organvm-iv-taxis) |
-| V | Public Process | [organvm-v-logos](https://github.com/organvm-v-logos) |
-| VI | Community | [organvm-vi-koinonia](https://github.com/organvm-vi-koinonia) |
-| VII | Marketing | [organvm-vii-kerygma](https://github.com/organvm-vii-kerygma) |
-| Meta | Governance | [meta-organvm](https://github.com/meta-organvm) |
-
----
-
-`organvm-iii-ergon/hokage-chess` -- DESIGN_ONLY -- Part of the Eight-Organ System
+## Proposed operating model
+
+The existing strategy documents describe a staged creator workflow. Every row
+below remains proposed until supported by operational evidence.
+
+| Stage | Proposed activity | Current repository support |
+|---|---|---|
+| Editorial planning | Rank ideas, plan an arc, prepare upload checks | Partial: deterministic helpers only |
+| Measurement review | Import platform metrics and produce a scorecard | Partial: scorecard calculation; no import |
+| Growth review | Compare supplied values with phase assumptions | Partial: arithmetic and labels only |
+| Monetization | Track coaching, community, ads, and sponsorships | Proposed: data types and simple sums only |
+| Automation | Connect platform APIs, persistence, and a user interface | Not implemented |
+
+The operational and commercial interpretation is developed in
+[the business edition](docs/audiences/business.md).
+
+## Strategy and provenance materials
+
+The repository preserves earlier project materials as a strategy corpus:
+
+- [Avatar archetype canon](docs/business/2026-04-26-avatar-archetype.md)
+- [Governance checklist](docs/strategy/HokageChess_Checklist_Governance.md)
+- [Governance minimal](docs/strategy/HokageChess_Governance_Minimal.md)
+- [Quick reference](docs/strategy/HokageChess_Quick_Reference.md)
+- [Chess engine and GUI survey](docs/strategy/Chess%20Engine%20and%20GUI%20Survey.pdf)
+- [Strategic growth blueprint](docs/strategy/Strategic%20Growth%20Blueprint%20for%20%40HokageChess.pdf)
+- [Source-material provenance manifest](docs/source-materials/PROVENANCE.yaml)
+
+These documents are inputs and design records. Their presence does not verify
+that their recommendations were executed or that their projections occurred.
+
+## Decisions, governance, and project record
+
+- [ADR-001: TypeScript foundation](docs/adr/001-initial-architecture.md)
+- [ADR-002: proposed cross-organ integration](docs/adr/002-integration-patterns.md)
+- [Client-separation substrate](docs/governance/client-separation-substrate.md)
+- [Canonical factual record](project-record.yml)
+- [Claim-level evidence and limitations](docs/evidence/README.md)
+
+## Authorship boundary
+
+Git history attributes the initial repository, long-form framing, source
+material ingestion, architecture decisions, and later documentation work to
+Anthony James Padavano and his repository identities. Commit
+[`ed8b20b`](https://github.com/4444J99/hokage-chess/commit/ed8b20bca0934193c3e39f73712f6a1a05ade0d7),
+which introduced the substantive TypeScript modules and their test files,
+records Claude Opus 4.6 as co-author. The project therefore presents the
+prototype as agent-assisted work directed and integrated by Anthony, not as an
+unassisted implementation claim.
+
+## Roadmap from helper prototype to usable product
+
+1. Reconcile the TypeScript, `ts-jest`, Jest, and ESLint versions.
+2. Restore a clean install, build, lint, and test predicate that fails closed.
+3. Add boundary and invalid-input tests to the heuristic functions.
+4. Decide whether the deliverable is a library, CLI, web application, or a
+   smaller combination; implement only the selected surface.
+5. Add external adapters, persistence, authentication, and secret handling only
+   if the selected surface requires them.
+6. Validate editorial thresholds and platform-policy assumptions against dated
+   sources and real, consented data.
+7. Claim deployment, adoption, or outcomes only after an inspectable record
+   exists.
+
+## Contributing
+
+Open an issue before making a large change. Contributions should keep proposed
+capabilities distinct from implemented ones, add tests for behavior changes,
+and update both [`project-record.yml`](project-record.yml) and the
+[evidence record](docs/evidence/README.md) when a material claim changes.
+
+## License and author
+
+Licensed under the [MIT License](LICENSE).
+
+Project owner: [Anthony James Padavano / @4444J99](https://github.com/4444J99).
+Hokage Chess participates in ORGANVM's ORGAN III (Commerce) context, but its
+current implementation status remains `prototype`.

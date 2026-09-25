@@ -1,5 +1,5 @@
 title: "Hokage Chess"
-description: "Hokage Chess: strategic chess variant design"
+description: "Design-stage TypeScript library and strategy corpus for chess-content planning"
 theme: minima
 include:
   - docs

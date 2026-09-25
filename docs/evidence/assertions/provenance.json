@@ -1,0 +1,18 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "hokage_source_material_provenance",
+  "assertion_class": "historical_record",
+  "statement": "The repository records six imported Hokage Chess source materials with source paths, hashes, sizes, timestamps, and classification metadata.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "hokage_provenance_manifest",
+      "independence_group": "repository-provenance-record",
+      "evidence_type": "artifact",
+      "reference": "docs/source-materials/PROVENANCE.yaml",
+      "body_hash": "sha256:928499d6894d49b45576ff90846c3bfd634172e257354e891a5d9092b6a8a0f1",
+      "observed_at": "2026-08-31T22:20:00Z"
+    }
+  ]
+}

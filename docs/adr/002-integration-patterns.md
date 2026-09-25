@@ -8,6 +8,11 @@ Accepted
 
 2026-02-13
 
+> **Current-state note (2026-08-31):** This ADR describes a proposed ecosystem
+> integration pattern. The current repository contains no npm package
+> consumption, external API adapter, or asynchronous cross-repository runtime.
+> See [`docs/evidence/README.md`](../evidence/README.md).
+
 ## Context
 
 The organvm system enforces a strict dependency flow: ORGAN-I (Theory) feeds into ORGAN-II (Art), which feeds into ORGAN-III (Commerce). ORGAN-IV (Orchestration) governs all organs. No back-edges are permitted. `hokage-chess` must define its integration points within this constraint.

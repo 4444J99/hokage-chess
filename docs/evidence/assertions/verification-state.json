@@ -1,0 +1,26 @@
+{
+  "contract_name": "assertion-evidence.v1",
+  "contract_version": 1,
+  "assertion_id": "hokage_verification_state_20260831",
+  "assertion_class": "historical_record",
+  "statement": "On audited checkout 6e81fd42e79d94fa3537648aa47fb3e7f0e7c3e4, standard install, Jest execution, TypeScript build, and ESLint all failed; test-source presence was not a passing verification result.",
+  "verification_state": "verified",
+  "evidence_references": [
+    {
+      "evidence_id": "hokage_current_tree_audit_checks",
+      "independence_group": "local-audit-2026-08-31",
+      "evidence_type": "fresh_verifier_receipt",
+      "reference": "docs/evidence/audit-2026-08-31.md",
+      "body_hash": "sha256:f8bc624943c0e75d2416722e3ec3a7434f5f821382cc3c07b4b5698174443239",
+      "observed_at": "2026-08-31T22:30:00Z"
+    },
+    {
+      "evidence_id": "hokage_ci_workflow",
+      "independence_group": "upstream-source-tree-6e81fd4",
+      "evidence_type": "primary_source",
+      "reference": ".github/workflows/ci.yml",
+      "body_hash": "sha256:fc8df65df5e4f8bdfed5883868c05c1a32da089ec9fab42ed03e569db652c8e3",
+      "observed_at": "2026-08-31T22:20:00Z"
+    }
+  ]
+}
