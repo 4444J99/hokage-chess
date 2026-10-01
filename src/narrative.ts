@@ -66,28 +66,19 @@ export function createNarrative(params: {
   has_rival: boolean;
   has_confession: boolean;
 }): NarrativeStructure {
-  const d = params.total_duration_seconds;
+  const d = Math.max(0, params.total_duration_seconds);
+
+  const t0 = 0;
+  const t1 = Math.min(10, d);
+  const t2 = Math.min(Math.max(t1, Math.floor(d * 0.35)), d);
+  const t3 = Math.min(Math.max(t2, Math.floor(d * 0.75)), d);
+  const t4 = d;
 
   const acts: ActTimestamp[] = [
-    { act: "ki", start_seconds: 0, end_seconds: Math.min(10, d), description: "Hook" },
-    {
-      act: "sho",
-      start_seconds: 10,
-      end_seconds: Math.min(Math.floor(d * 0.35), d),
-      description: "Setup",
-    },
-    {
-      act: "ten",
-      start_seconds: Math.floor(d * 0.35),
-      end_seconds: Math.min(Math.floor(d * 0.75), d),
-      description: "Twist",
-    },
-    {
-      act: "ketsu",
-      start_seconds: Math.floor(d * 0.75),
-      end_seconds: d,
-      description: "Resolution",
-    },
+    { act: "ki", start_seconds: t0, end_seconds: t1, description: "Hook" },
+    { act: "sho", start_seconds: t1, end_seconds: t2, description: "Setup" },
+    { act: "ten", start_seconds: t2, end_seconds: t3, description: "Twist" },
+    { act: "ketsu", start_seconds: t3, end_seconds: t4, description: "Resolution" },
   ];
 
   return {
@@ -96,7 +87,7 @@ export function createNarrative(params: {
     acts,
     has_rival: params.has_rival,
     has_confession: params.has_confession,
-    total_duration_seconds: d,
+    total_duration_seconds: params.total_duration_seconds,
   };
 }
 
@@ -111,6 +102,10 @@ export function validateNarrative(narrative: NarrativeStructure): {
   const errors: string[] = [];
   const { acts, total_duration_seconds } = narrative;
 
+  if (total_duration_seconds < 0) {
+    errors.push("Total duration cannot be negative");
+  }
+
   if (acts.length !== 4) {
     errors.push(`Expected 4 acts, found ${acts.length}`);
   }
@@ -119,6 +114,20 @@ export function validateNarrative(narrative: NarrativeStructure): {
   for (let i = 0; i < acts.length; i++) {
     if (acts[i]?.act !== expected_order[i]) {
       errors.push(`Act ${i + 1} should be ${expected_order[i]}, found ${acts[i]?.act}`);
+    }
+  }
+
+  for (let i = 0; i < acts.length; i++) {
+    const act = acts[i];
+    if (!act) continue;
+    if (act.start_seconds < 0 || act.end_seconds < 0) {
+      errors.push(`Act ${i + 1} has negative timestamps`);
+    }
+    if (act.start_seconds > act.end_seconds) {
+      errors.push(`Act ${i + 1} start_seconds exceeds end_seconds`);
+    }
+    if (act.start_seconds > total_duration_seconds || act.end_seconds > total_duration_seconds) {
+      errors.push(`Act ${i + 1} exceeds total duration`);
     }
   }
 
@@ -133,6 +142,9 @@ export function validateNarrative(narrative: NarrativeStructure): {
   for (let i = 1; i < acts.length; i++) {
     if (acts[i].start_seconds < acts[i - 1].end_seconds) {
       errors.push(`Act ${i + 1} overlaps with act ${i}`);
+    }
+    if (acts[i].start_seconds > acts[i - 1].end_seconds) {
+      errors.push(`Act ${i + 1} has a gap after act ${i}`);
     }
   }
 
